@@ -1,0 +1,116 @@
+<footer class="bg-main-green-200 text-white font-prompt text-white-200">
+    <div class="container mx-auto px-6 text-[15px]">
+        <div class="pt-[103px] pb-[84px] flex flex-wrap">
+        <div class="w-full md:w-1/2 lg:w-1/5 mx-auto mb-[25px] px-[15px]">
+            <h5 class="mb-[15px] text-[20px] font-semibold text-white">
+            <span class="text-center">{{Footer.content.title}}</span>
+            </h5>
+            <p class="my-1 font-light leading-[25.95px]">
+            {{Footer.content.descr}}
+            </p>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/5 mx-auto mb-[25px] px-[15px]">
+            <h5 class="mb-[15px] text-[20px] font-semibold text-white">
+            {{Footer.links.title}}
+            </h5>
+            <ul class="space-y-[10px]">
+            <li>
+                <a href="/about.html" class="hover:text-white duration-200"
+                >{{Footer.links.home}}</a
+                >
+            </li>
+            <li>
+                <a href="/about.html" class="hover:text-white duration-200"
+                >{{Footer.links.about}}</a
+                >
+            </li>
+            <li>
+                <a href="/services.html" class="hover:text-white duration-200"
+                >{{Footer.links.services}}</a
+                >
+            </li>
+            <li>
+                <a href="/contact.html" class="hover:text-white duration-200"
+                >{{Footer.links.contact}}</a
+                >
+            </li>
+            </ul>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/5 mx-auto mb-[25px] px-[15px]">
+            <h5 class="mb-[15px] text-[20px] font-semibold text-white">
+            {{Footer.contact.title}}
+            </h5>
+            <ul class="space-y-2">
+            <li>
+                <span>{{Footer.contact.location.key}}</span>&nbsp;
+                <a href="/" class="hover:text-white duration-200">
+                {{Footer.contact.location.value}}
+                </a>
+            </li>
+            <li>
+                <span>{{Footer.contact.phone.key}}</span>&nbsp;
+                <a href="/" class="hover:text-white duration-200">
+                {{Footer.contact.phone.value}}
+                </a>
+            </li>
+            <li>
+                <span>{{Footer.contact.email.key}}</span>&nbsp;
+                <a href="/" class="hover:text-white duration-200">
+                {{Footer.contact.email.value}}
+                </a>
+            </li>
+            </ul>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/5 mx-auto mb-[25px] px-[15px]">
+            <h5 class="mb-[15px] text-[20px] font-semibold text-white">
+            {{Footer.network.title}}
+            </h5>
+            <ul class="space-y-3">
+            <li>
+                <a
+                href="{{Footer.network.facebook.link}}"
+                class="flex items-center space-x-3 hover:text-white duration-200 tracking-wide"
+                >
+                <i class="fa-brands fa-facebook-f text-[18px]"></i>
+                <p>{{Footer.network.facebook.content}}</p>
+                </a>
+            </li>
+            <li>
+                <a
+                href="{{Footer.network.instagram.link}}"
+                class="flex items-center space-x-3 hover:text-white duration-200 tracking-wide"
+                >
+                <i class="fa-brands fa-instagram text-[18px]"></i>
+                <p>{{Footer.network.instagram.content}}</p>
+                </a>
+            </li>
+            <li>
+                <a
+                href="{{Footer.network.telegram.link}}"
+                class="flex items-center space-x-3 hover:text-white duration-200 tracking-wide"
+                >
+                <i class="fa-brands fa-telegram text-[18px]"></i>
+                <p>{{Footer.network.telegram.content}}</p>
+                </a>
+            </li>
+            </ul>
+        </div>
+        </div>
+        <div
+        class="flex flex-col space-y-4 text-center py-5 md:flex-row md:space-y-0 justify-between border-t border-gray-600"
+        >
+        <div class="divide-x-2 divide-gray-600">
+            <a href="/" class="pr-2">
+                {{Footer.privacy.leftOne}}
+            </a>
+            <a href="/" class="pl-3">
+                {{Footer.privacy.leftTwo}}
+            </a>
+        </div>
+        <p>
+            {{Footer.privacy.right}}
+        </p>
+        </div>
+    </div>
+    </footer>
+

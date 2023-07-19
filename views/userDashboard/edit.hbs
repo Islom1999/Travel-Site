@@ -1,0 +1,152 @@
+<header>
+    <div
+        id="login-modal"
+        class="fixed z-[60] top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 bg-white shadow-1 w-max mx-auto rounded-lg px-5 sm:px-10 pt-12 pb-5 opacity-0 pointer-events-none duration-200"
+    >
+        <button
+        id="login-modal-closer"
+        class="absolute top-2 right-5 text-[20px]"
+        >
+        <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button
+        class="p-[2px] bg-[#4b7fe0] text-white flex items-center rounded-sm"
+        >
+        <img
+            src="/assets/images/google-logo.png"
+            alt="Login With Google"
+            class="w-8 h-8 sm:w-11 sm:h-11 rounded-sm bg-white p-1"
+        />
+        <p class="py-1 px-3 font-sans">Google orqali kirish</p>
+        </button>
+    </div>
+    <div
+        id="login-modal-overlay"
+        class="fixed top-0 z-50 left-0 w-full h-full bg-[#ffffffbc] opacity-0 pointer-events-none duration-200"
+    ></div>
+    <div
+        class="h-[250px] flex items-center justify-center md:justify-between flex-col space-y-6 md:space-y-0 md:flex-row bg-gray-100 text-black"
+    >
+        <h1
+        class="px-12 font-prompt text-[35px] sm:text-[50px] font-semibold leading-[67px]"
+        >
+        Profilni tahrirlash
+        </h1>
+        <ul
+        class="flex px-12 text-[13px] md:text-[15px] font-light space-x-3"
+        >
+        <li>
+            <a href="{{url}}/">Bosh sahifa</a>
+        </li>
+        <li>></li>
+        <li class="w-max">Profilni tahrirlash</li>
+        </ul>
+    </div>
+</header>
+<section
+class="py-10 container mx-auto px-6 md:px-10 lg:px-20 flex flex-col-reverse md:flex-row md:space-x-10 text-main-gray-100"
+>
+<ul
+    class="w-full md:w-[315px] h-fit mt-8 md:mt-0 space-y-4 bg-gray-100 py-[21px] px-6 text-[13px] font-semibold uppercase tracking-wider text-main-gray-100"
+>
+    <li>
+    <a href="{{url}}/dashboard" class="text-main-green-100">
+        <i class="fa-solid fa-user text-[14px] mr-2"></i>
+        <span>Profil</span>
+    </a>
+    </li>
+    <li>
+    <a
+        href="{{url}}/dashboard/edit"
+        class="hover:text-main-green-100 duration-200"
+    >
+        <i class="fa-solid fa-user text-[14px] mr-2"></i>
+        <span>Profilni Tahrirlash</span>
+    </a>
+    </li>
+    <li>
+    <a
+        href="{{url}}/dashboard/reserved"
+        class="hover:text-main-green-100 duration-200"
+    >
+        <i class="fa-solid fa-user text-[14px] mr-2"></i>
+        <span>Ko'rsatilgan Xizmatlar</span>
+    </a>
+    </li>
+    <li>
+    <a href="#" class="hover:text-main-green-100 duration-200">
+        <i class="fa-solid fa-user text-[14px] mr-2"></i>
+        <span>Chiqish</span>
+    </a>
+    </li>
+</ul>
+<form class="w-full">
+    <img
+    id="profile-img"
+    src="/assets/images/default-user.png"
+    alt="User Profile Image"
+    class="w-28 h-28 object-cover mb-3"
+    />
+    <label
+    for="profile-image"
+    class="mb-6 px-5 py-3 bg-blue-600 text-white rounded-lg cursor-pointer block w-fit"
+    >Rasmni O'zgartirish</label
+    >
+    <input id="profile-image" type="file" hidden />
+    <label
+    for="first-name"
+    class="text-[20px] md:text-[30px] font-semibold text-black block mb-2"
+    >Ism</label
+    >
+    <input
+    id="first-name"
+    type="text"
+    class="block w-full mb-6 text-[15px] font-light text-main-gray-100 outline-none border border-gray-600 focus:border-black px-5 py-[11px]"
+    />
+    <label
+    for="last-name"
+    class="text-[20px] md:text-[30px] font-semibold text-black block mb-2"
+    >Familiya</label
+    >
+    <input
+    id="last-name"
+    type="text"
+    class="block w-full mb-6 text-[15px] font-light text-main-gray-100 outline-none border border-gray-600 focus:border-black px-5 py-[11px]"
+    />
+    <label
+    for="email"
+    class="text-[20px] md:text-[30px] font-semibold text-black block mb-2"
+    >Elektron Pochta</label
+    >
+    <input
+    id="email"
+    type="text"
+    class="block w-full mb-6 text-[15px] font-light text-main-gray-100 outline-none border border-gray-600 focus:border-black px-5 py-[11px]"
+    />
+    <label
+    for="website"
+    class="text-[20px] md:text-[30px] font-semibold text-black block mb-2"
+    >Vabsayt</label
+    >
+    <input
+    id="website"
+    type="text"
+    class="block w-full mb-6 text-[15px] font-light text-main-gray-100 outline-none border border-gray-600 focus:border-black px-5 py-[11px]"
+    />
+    <label
+    for="description"
+    class="text-[20px] md:text-[30px] font-semibold text-black block mb-2"
+    >Izoh</label
+    >
+    <input
+    id="description"
+    type="text"
+    class="block w-full mb-6 text-[15px] font-light text-main-gray-100 outline-none border border-gray-600 focus:border-black px-5 py-[11px]"
+    />
+    <button
+    class="mt-5 px-[34px] py-[15px] text-[13px] font-semibold text-white bg-main-green-100 hover:bg-main-green-300 duration-200 uppercase"
+    >
+    Profilni Yangilash
+    </button>
+</form>
+</section>

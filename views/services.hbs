@@ -1,0 +1,131 @@
+<header>
+    <div
+        class="h-[400px] grid place-content-center text-white bg-cover bg-[url({{ServicesPage.img}})]"
+    >
+        <h1 class="font-prompt text-[50px] font-semibold leading-[67px]">
+        {{ServicesPage.titleHome}}
+        </h1>
+    </div>
+</header>
+<!-- PRICES -->
+<section class="container mx-auto font-prompt">
+<div
+    class="py-[90px] px-[5%] md:px-[10%] lg:px-[20%] text-center text-main-gray-100"
+>
+    <h2 class="text-[40px] font-semibold">{{ServicesPage.titleSection}}</h2>
+    <p class="mt-[25px] text-[18px] font-light leading-[31px]">
+    {{ServicesPage.descr}}
+    </p>
+</div>
+<div class="px-6 space-y-20 xl:space-y-[120px] py-20">
+    {{#if ServicesDB}}
+        {{#each ServicesDB}}
+            {{#if isLeft}}
+                <div
+                class="flex flex-col justify-between space-y-10 xl:space-y-0 xl:flex-row"
+                >
+                <div class="w-full xl:w-[50%]">
+                    <h3 class="text-[20px] text-main-gray-100 w-[80%]">
+                        {{title}}
+                    </h3>
+                    <div class="flex mt-8 text-[15px] text-main-gray-100">
+                    <div class="w-full">
+                        <div class="flex w-full pb-3">
+                        <h6
+                            class="w-[80%] text-[13px] font-semibold uppercase pb-5"
+                        >
+                            {{content.cost}}
+                        </h6>
+                        <h6
+                            class="w-[20%] text-[13px] font-semibold uppercase pb-5"
+                        >
+                            {{content.amount}}
+                        </h6>
+                        </div>
+                        <ul> 
+                            {{#each cost}}
+                            <li class="border-t py-3 border-gray-400 flex">
+                                <p class="w-[80%]">
+                                {{content}}
+                                </p>
+                                <p class="w-[20%]">{{amount}} So'm</p>
+                            </li>
+                            {{/each}}
+                            <li class="border-b border-gray-400"></li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-5">
+                    <a
+                        href="{{../url}}/services/{{id}}"
+                        class="block w-fit px-6 py-[13px] border border-main-green-100 hover:bg-main-green-100 hover:text-white duration-200"
+                    >
+                        {{btn}}
+                    </a>
+                    <p class="text-[20px]">{{allAmount}} So'm</p>
+                    </div>
+                </div>
+                <img
+                    src="{{img}}"
+                    alt="Offer Image"
+                    class="w-full xl:w-[45%] object-cover"
+                />
+                </div>
+            {{else}}
+                <div
+                class="flex flex-col-reverse xl:justify-between xl:flex-row-reverse"
+                >
+                <div class="w-full xl:w-[50%]">
+                    <h3 class="text-[20px] text-main-gray-100 w-[80%]">
+                        {{title}}
+                    </h3>
+                    <div class="flex mt-8 xl:pr-24 text-[15px] text-main-gray-100">
+                    <div class="w-full">
+                        <div class="flex w-full pb-3">
+                        <h6
+                            class="w-[80%] text-[13px] font-semibold uppercase pb-5"
+                        >
+                            {{content.cost}}
+                        </h6>
+                        <h6
+                            class="w-[20%] text-[13px] font-semibold uppercase pb-5"
+                        >
+                            {{content.amount}}
+                        </h6>
+                        </div>
+                        <ul>
+                            {{#each cost}}
+                            <li class="border-t py-3 border-gray-400 flex">
+                                <p class="w-[80%]">
+                                {{content}}
+                                </p>
+                                <p class="w-[20%]">{{amount}} So'm</p>
+                            </li>
+                            {{/each}}
+                            <li class="border-b border-gray-400"></li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-5">
+                    <a
+                        href="{{../url}}/services/{{id}}"
+                        class="block w-fit px-6 py-[13px] border border-main-green-100 hover:bg-main-green-100 hover:text-white duration-200"
+                    >
+                        {{btn}}
+                    </a>
+                    <p class="text-[20px]">{{allAmount}} So'm</p>
+                    </div>
+                </div>
+                <img
+                    src="{{img}}"
+                    alt="Offer Image"
+                    class="w-full mb-10 xl:w-[45%] object-cover"
+                />
+                </div>
+            {{/if}}
+        {{/each}}
+    {{else}}
+        <h1>Hali xizmatlar qo'shilmagan</h1>
+    {{/if}}
+</div>
+</section>

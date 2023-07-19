@@ -1,0 +1,85 @@
+<header>
+    <div
+        class="h-[250px] flex items-center justify-center md:justify-between flex-col space-y-6 md:space-y-0 md:flex-row bg-gray-100 text-black"
+    >
+        <h1
+        class="px-12 font-prompt text-[35px] sm:text-[50px] font-semibold leading-[67px]"
+        >
+        {{UsersPageDB.title}}
+        </h1>
+        <ul
+        class="flex px-12 text-[13px] md:text-[15px] font-light space-x-3"
+        >
+        <li>
+            <a href="/">{{UsersPageDB.header.textOne}}</a>
+        </li>
+        <li>></li>
+        <li class="w-max">{{UsersPageDB.header.textTwo}}</li>
+        </ul>
+    </div>
+</header>
+<section
+class="py-10 container mx-auto px-6 md:px-10 lg:px-20 flex flex-col-reverse md:flex-row md:space-x-10 text-main-gray-100"
+>
+<ul
+    class="w-full md:w-[315px] h-fit mt-8 md:mt-0 space-y-4 bg-gray-100 py-[21px] px-6 text-[13px] font-semibold uppercase tracking-wider text-main-gray-100"
+>
+    <li>
+    <a href="{{url}}/dashboard" class="text-main-green-100">
+        <i class="fa-solid fa-user text-[14px] mr-2"></i>
+        <span>{{UsersPageDB.pages.profile}}</span>
+    </a>
+    </li>
+    <li>
+    <a
+        href="{{url}}/dashboard/edit"
+        class="hover:text-main-green-100 duration-200"
+    >
+        <i class="fa-solid fa-user text-[14px] mr-2"></i>
+        <span>{{UsersPageDB.pages.profileUpdate}}</span>
+    </a>
+    </li>
+    <li>
+    <a
+        href="{{url}}/dashboard/reserved"
+        class="hover:text-main-green-100 duration-200"
+    >
+        <i class="fa-solid fa-user text-[14px] mr-2"></i>
+        <span>{{UsersPageDB.pages.profileServices}}</span>
+    </a>
+    </li>
+    <li>
+        <form action="/{{lang}}/user/logout" method="POST">
+            <button type="submit" class="hover:text-main-green-100 duration-200">
+                <i class="fa-solid fa-user text-[14px] mr-2"></i>
+                <span>{{UsersPageDB.pages.profileLogOut}}</span>
+            </button>
+        </form>
+    </li>
+</ul>
+<ul class="space-y-2 font-light">
+    <li>
+    <img
+        src="{{UsersDB.img}}"
+        alt="User Image"
+        class="w-[96px] h-[96px] !mb-4"
+    />
+    </li>
+    <li class="flex space-x-2">
+    <b class="font-medium">{{UsersPageDB.dash.fullname}}</b>
+    <p>{{UsersDB.fullName}}</p>
+    </li>
+    <li class="flex space-x-2">
+    <b class="font-medium">{{UsersPageDB.dash.userName}}</b>
+    <p>{{UsersDB.userName}}</p>
+    </li>
+    <li class="flex space-x-2">
+    <b class="font-medium">{{UsersPageDB.dash.email}}</b>
+    <p>{{UsersDB.email}}</p>
+    </li>
+    <li class="flex space-x-2">
+    <b class="font-medium">{{UsersPageDB.dash.phone}}</b>
+    <p>{{UsersDB.phone}}</p>
+    </li>
+</ul>
+</section>

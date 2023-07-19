@@ -1,0 +1,129 @@
+<div class="content">
+    <header>
+        <div
+            id="login-modal"
+            class="fixed z-[60] top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 bg-white shadow-1 w-max mx-auto rounded-lg px-5 sm:px-10 pt-12 pb-5 opacity-0 pointer-events-none duration-200"
+        >
+            <button
+            id="login-modal-closer"
+            class="absolute top-2 right-5 text-[20px]"
+            >
+            <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button
+            class="p-[2px] bg-[#4b7fe0] text-white flex items-center rounded-sm"
+            >
+            <img
+                src="/assets/images/google-logo.png"
+                alt="Login With Google"
+                class="w-8 h-8 sm:w-11 sm:h-11 rounded-sm bg-white p-1"
+            />
+            <p class="py-1 px-3 font-sans">Google orqali kirish</p>
+            </button>
+        </div>
+        <div
+            id="login-modal-overlay"
+            class="fixed top-0 z-50 left-0 w-full h-full bg-[#ffffffbc] opacity-0 pointer-events-none duration-200"
+        ></div>
+        <div
+            class="h-[400px] flex items-center text-white bg-cover bg-[url({{PagesDB.header.img}})]"
+        >
+            <h1
+            class="container mx-auto px-12 font-prompt text-[50px] font-semibold leading-[67px]"
+            >
+            {{PagesDB.header.title}}
+            </h1>
+        </div>
+    </header>
+    <!-- DETAILS -->
+    <section
+    class="pt-[112px] pb-[88px] container mx-auto px-6 flex flex-col lg:flex-row lg:space-x-[80px] space-y-10 lg:space-y-0 space-x-0"
+    >
+    <div class="w-full lg:w-1/2">
+        <h2 class="pb-[18px] text-[25px] font-semibold leading-[38px]">
+        {{PagesDB.section.inforTitle}}
+        </h2>
+        <p
+        class="text-main-gray-100 text-[15px] leading-[25.95px] font-light mb-8"
+        >
+        {{PagesDB.section.inforDescr}}
+        </p>
+        <ul class="font-light text-[18px] space-y-1">
+        <li>{{PagesDB.section.phoneOne}}</li>
+        <li>{{PagesDB.section.phoneTwo}}</li>
+        <li>{{PagesDB.section.telegram}}</li>
+        <li class="!mt-5">{{PagesDB.section.phoneOne}}</li>
+        <li class="!mt-3 flex space-x-5">
+            <span>{{Footer.network.title}}</span>
+            <div class="space-x-4">
+                <a href="{{Footer.network.facebook.link}}">
+                    <i
+                        class="fa-brands fa-facebook-f hover:text-main-green-100 duration-200 cursor-pointer"
+                    ></i>
+                </a>
+                <a href="{{Footer.network.instagram.link}}">
+                    <i
+                        class="fa-brands fa-instagram hover:text-main-green-100 duration-200 cursor-pointer"
+                    ></i>
+                </a>
+                <a href="{{Footer.network.telegram.link}}">
+                    <i
+                        class="fa-brands fa-telegram hover:text-main-green-100 duration-200 cursor-pointer"
+                    ></i>
+                </a>
+            </div>
+        </li>
+        </ul>
+    </div>
+    <div class="w-full lg:w-1/2">
+        <h2 class="pb-[18px] text-[25px] font-semibold leading-[38px]">
+        {{PagesDB.section.formTitle}}
+        </h2>
+        <p
+        class="text-main-gray-100 text-[15px] leading-[25.95px] font-light mb-5"
+        >
+        {{PagesDB.section.formDescr}}
+        </p>
+        <form>
+            <textarea
+                placeholder="{{PagesDB.section.formTextValue}}"
+                class="text-[15px] font-light text-main-gray-100 outline-none w-full h-[180px] border border-gray-600 focus:border-black px-5 py-[11px] mb-[20px]"
+            ></textarea>
+            <div class="flex flex-col sm:flex-row sm:space-x-4 sm:space-y-0">
+                <input
+                type="text"
+                placeholder="{{PagesDB.section.formNameValue}}"
+                class="text-[15px] font-light text-main-gray-100 outline-none w-full sm:w-1/2 border border-gray-600 focus:border-black px-5 py-[11px] !mb-[26px]"
+                />
+                <input
+                type="email"
+                placeholder="{{PagesDB.section.formEmailValue}}"
+                class="text-[15px] font-light text-main-gray-100 outline-none w-full sm:w-1/2 border border-gray-600 focus:border-black px-5 py-[11px] !mb-[26px]"
+                />
+            </div>
+            <div class="flex justify-end items-center">
+                <button
+                type="button"
+                class="group hover:text-main-green-100 text-[13px] font-semibold tracking-wider space-x-2 uppercase"
+                >
+                <span>{{PagesDB.section.formBtn}}</span>
+                <i
+                    class="fa-solid fa-arrow-right-long text-[15px] w-8 text-start group-hover:pl-2 duration-200"
+                ></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    </section>
+    <!-- MAP -->
+    <section>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d95925.51709077595!2d69.24533759999998!3d41.2942336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1657648233461!5m2!1sen!2s"
+        height="605"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        style="width: 100%; border: 0"
+    ></iframe>
+    </section>
+</div>

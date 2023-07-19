@@ -1,0 +1,341 @@
+<div class="content">
+    <header>
+        <div
+        id="login-modal"
+        class="fixed z-[60] top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 bg-white shadow-1 w-max mx-auto rounded-lg px-5 sm:px-10 pt-12 pb-5 opacity-0 pointer-events-none duration-200"
+        >
+            <button
+            id="login-modal-closer"
+            class="absolute top-2 right-5 text-[20px]"
+            >
+            <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button
+            class="p-[2px] bg-[#4b7fe0] text-white flex items-center rounded-sm"
+            >
+            <img
+                src="/assets/images/google-logo.png"
+                alt="Login With Google"
+                class="w-8 h-8 sm:w-11 sm:h-11 rounded-sm bg-white p-1"
+            />
+            <p class="py-1 px-3 font-sans">Google orqali kirish</p>
+            </button>
+        </div>
+        <div
+            id="login-modal-overlay"
+            class="fixed top-0 z-50 left-0 w-full h-full bg-[#ffffffbc] opacity-0 pointer-events-none duration-200"
+        ></div>
+        <div
+            class="splide h-[200px] sm:h-[300px] md:h-[400px] relative overflow-hidden"
+            id="my-splide"
+        >
+            <div
+            class="splide__arrows splide__arrows--ltr text-white text-[20px] lg:text-[30px]"
+            >
+            <button
+                class="splide__arrow splide__arrow--prev absolute top-1/2 -translate-y-1/2 left-7 z-10"
+                type="button"
+                aria-label="Previous slide"
+                aria-controls="splide01-track"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button
+                class="splide__arrow splide__arrow--next absolute top-1/2 -translate-y-1/2 right-7 z-10"
+                type="button"
+                aria-label="Next slide"
+                aria-controls="splide01-track"
+            >
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            </div>
+            <div class="splide__track">
+            <div class="splide__list flex">
+                {{#each slider}}
+                    <div
+                    class="splide__slide h-[200px] sm:h-[300px] md:h-[400px] min-w-full md:min-w-[50%] lg:min-w-[33.3333%]"
+                    >
+                    <img
+                        src="{{img}}"
+                        alt="Slider Image 1"
+                        class="object-cover h-full w-full"
+                    />
+                    </div>
+                {{/each}}
+            </div>
+            </div>
+        </div>
+    </header>
+    <section>
+    <div class="px-6 py-20">
+        <div
+        class="flex flex-col justify-between space-y-10 xl:space-y-0 xl:flex-row"
+        >
+        <div class="w-full xl:w-[50%]">
+            <h3 class="text-[20px] text-main-gray-100 w-[80%]">
+                {{ServicesDB.title}}
+            </h3>
+            <div class="flex mt-8 text-[15px] text-main-gray-100">
+            <div class="w-full">
+                <div class="flex w-full pb-3">
+                <h6
+                    class="w-[80%] text-[13px] font-semibold uppercase pb-5"
+                >
+                    {{ServicesDB.content.cost}}
+                </h6>
+                <h6
+                    class="w-[20%] text-[13px] font-semibold uppercase pb-5"
+                >
+                    {{ServicesDB.content.amount}}
+                </h6>
+                </div>
+                <ul>
+                    {{#each ServicesDB.cost}}
+                        <li class="border-t py-3 border-gray-400 flex">
+                            <p class="w-[80%]">
+                            {{content}}
+                            </p>
+                            <p class="w-[20%]">{{amount}} USD</p>
+                        </li>
+                    {{/each}}
+                        <li class="border-b border-gray-400"></li>
+                </ul>
+            </div>
+            </div>
+            <div class="flex justify-between items-center mt-5">
+                <a
+                href="{{ServicesDB.id}}"
+                class="block w-fit px-6 py-[13px] mt-5 border border-main-green-100 hover:bg-main-green-100 hover:text-white duration-200"
+                >
+                    {{ServicesDB.btn}}
+                </a>
+                <p class="text-[20px]">{{ServicesDB.allAmount}} USD</p>
+            </div>
+        </div>
+        <img
+            src="{{ServicesDB.img}}"
+            alt="Offer Image"
+            class="w-full xl:w-[45%] object-cover"
+        />
+        </div>
+    </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                XIZMAT O'ZGARTIRISH
+            </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+
+            <form action="/admin/services/{{ServicesDB.id}}/update"  method="POST" enctype="multipart/form-data" class="text-center row">
+                <div class="row">
+                    <hr>
+                    <h1 class="mt-5">YANGI XIZMAT QO'SHISH</h1>
+                    
+                    <div class="form-group my-3 col-4">
+                        <label for="title">XIZMAT NOMI O'ZBEKCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="title"
+                            value=""
+                            name="titleUZ">
+                    </div>
+                    <div class="form-group my-3 col-4">
+                        <label for="title">XIZMAT NOMI INGLIZCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="title"
+                            value=""
+                            name="titleENG">
+                    </div>
+                    <div class="form-group my-3 col-4">
+                        <label for="title">XIZMAT NOMI RUSCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="title"
+                            value=""
+                            name="titleRU">
+                    </div>
+                    <div class="form-group my-3 col-12">
+                        <label for="image">XIZMAT UCHUN RASM TANLANG</label>
+                        <input 
+                            type="file" 
+                            class="form-control-file bg-secondary" 
+                            id="image"
+                            name="image">
+                        <label for="image">Rasm tanlang</label>
+                    </div>
+
+                    <h1 class="mt-5">1-XARAJATLAR UCHUN TO'LDIRING</h1>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI UZBEKCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costuz1">
+                    </div>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI INGLIZCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costeng1">
+                    </div>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI RUSCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costru1">
+                    </div>    
+                    <div class="form-group my-3 col-6">
+                        <label for="amount">NARXI</label>
+                        <input required 
+                            type="number"
+                            class="form-control bg-secondary" 
+                            id="amount1"
+                            value=""
+                            name="amount1">
+                    </div>
+
+                    <h1 class="mt-5">2-XARAJATLAR UCHUN TO'LDIRING</h1>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI UZBEKCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costuz2">
+                    </div>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI INGLIZCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costeng2">
+                    </div>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI RUSCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costru2">
+                    </div>    
+                    <div class="form-group my-3 col-6">
+                        <label for="amount">NARXI</label>
+                        <input required 
+                            type="number"
+                            class="form-control bg-secondary" 
+                            id="amount"
+                            value=""
+                            name="amount2">
+                    </div>
+
+                    <h1 class="mt-5">3-XARAJATLAR UCHUN TO'LDIRING</h1>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI UZBEKCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costuz3">
+                    </div>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI INGLIZCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costeng3">
+                    </div>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI RUSCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costru3">
+                    </div>    
+                    <div class="form-group my-3 col-6">
+                        <label for="amount">NARXI</label>
+                        <input required 
+                            type="number"
+                            class="form-control bg-secondary" 
+                            id="amount"
+                            value=""
+                            name="amount3">
+                    </div>
+
+                    <h1 class="mt-5">4-XARAJATLAR UCHUN TO'LDIRING</h1>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI UZBEKCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costuz4">
+                    </div>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI INGLIZCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costeng4">
+                    </div>
+                    <div class="form-group my-3 col-6">
+                        <label for="cost">XARAJATLAR NOMI RUSCHA</label>
+                        <input required 
+                            type="text"
+                            class="form-control bg-secondary" 
+                            id="cost"
+                            value=""
+                            name="costru4">
+                    </div>    
+                    <div class="form-group my-3 col-6">
+                        <label for="amount">NARXI</label>
+                        <input required 
+                            type="number"
+                            class="form-control bg-secondary" 
+                            id="amount"
+                            value=""
+                            name="amount4">
+                    </div>
+                    
+                    <button type="submit" class="col-6 btn btn-primary m-auto my-3">YANGI XIZMATNI QO'SHISH</button>
+                    <hr>
+                </div>
+            </form>
+                
+            </div>
+            </div>
+        </div>
+        <form action="/admin/services/{{ServicesDB.id}}/romove" method="POST" class="text-center">
+            <button type="submit" class="col-6 btn btn-primary m-auto my-3">USHBU XIZMATNI SAYTDAN O'CHIRISH</button>
+        </form>
+    </div>
+
+</div>

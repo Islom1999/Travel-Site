@@ -1,0 +1,116 @@
+<header>
+    <div
+        class="h-[400px] flex items-center text-white bg-cover bg-[url({{AboutDB.header.img}})]"
+    >
+        <h1
+        class="container mx-auto px-12 font-prompt text-[50px] font-semibold leading-[67px]"
+        >
+        {{AboutDB.header.title}}
+        </h1>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section class="container mx-auto px-6 my-20 relative">
+<div
+    class="p-0 md:px-[100px] lg:px-[200px] xl:px-[278px] text-center space-y-[31px] font-prompt"
+>
+    <div class="text-[35px] md:text-[40px] font-medium leading-[53px]">
+    <img src="/assets/images/logo.png" alt="Logo" class="mx-auto" />
+    </div>
+    <p class="text-[18px] font-light leading-[31px] text-main-gray-100">
+    {{AboutDB.section.descr}}
+    </p>
+</div>
+<div class="pt-[60px] flex flex-wrap text-center text-[13px] text-main-gray-100 font-prompt font-normal tracking-[.65px]">
+    {{#each statisDB}}
+        {{#if number}}
+            <div class="w-full md:w-1/2 pt-10 md:pl-[105px] md:pt-[50px]lg:p-0 lg:w-1/5">
+            <i
+                class="fa-solid fa-expand text-[70px] text-main-green-100 duration-150 hover:-translate-y-1"
+            ></i>
+            <p class="pt-3">{{content}}</p>
+            </div>
+        {{else}}
+            <div class="w-full md:w-1/3 lg:w-1/5 pt-10 md:p-0">
+            <i
+                class="fa-solid fa-expand text-[70px] text-main-green-100 duration-150 hover:-translate-y-1"
+            ></i>
+            <p class="pt-3">{{content}}</p>
+            </div>
+        {{/if}}
+    {{/each}}
+</div>
+</section>
+<!-- VIDEO -->
+<section class="container mx-auto px-6 pb-28">
+<div class="relative group w-[80%] mx-auto">
+    <video
+    src="{{videoDB.src}}"
+    alt="About Us"
+    class="w-full rounded-xl"
+    id="about-video"
+    >
+    {{videoDB.err}}
+    </video>
+    <div
+    id="about-video-thumbnail"
+    class="absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover rounded-xl grid place-content-center z-30 bg-[url(/assets/images/demos/1.jpg)]"
+    >
+    <button
+        class="text-white w-10 h-10 text-[20px] md:w-[80px] md:h-[80px] md:text-[40px] bg-[#ffffff96] grid place-content-center border-2 rounded-full outline-none hover:!opacity-100 duration-200"
+        id="play-about-video"
+    >
+        <i class="fa-solid fa-play"></i>
+    </button>
+    </div>
+</div>
+</section>
+<!-- PREFERENCES -->
+<section
+class="container mx-auto px-10 pb-[116px] flex flex-wrap font-prompt"
+>
+
+{{#each AboutDB.section.prising}}
+<div class="w-full md:w-1/2 lg:w-1/3 mb-[50px] lg:mb-[60px]">
+    <div class="flex space-x-3 items-end text-black">
+    <i class="fa-solid fa-toilet text-[40px]"></i>
+    <h4 class="text-[20px]">{{title}}</h4>
+    </div>
+    <p
+    class="text-main-gray-200 leading-[25.95px] text-[15px] font-light mt-3 mr-1"
+    >
+    {{descr}}
+    </p>
+</div>
+{{/each}}
+</section>
+<!-- DISCOVER -->
+<section
+class="container mx-auto px-6 pb-40 flex flex-col xl:flex-row space-y-10 font-prompt"
+>
+<img
+    src="{{AboutDB.section.discover.img}}"
+    alt="About Us"
+    class="asldfnhsdkjfb nSJDBASJKBF ASJNAJSKBFDN LSKCNASKJFBHV ASDNASKFNSDK ASNFSAKJF"
+/>
+<div
+    class="xl:pl-[5%] xl:mr-[15%] flex flex-col items-center justify-start"
+>
+    <h2
+    class="text-[35px] md:text-[40px] leading-[1.325em] font-medium break-words w-full"
+    >
+    {{AboutDB.section.discover.title}}
+    </h2>
+    <p class="mt-[31px] text-[18px] font-light leading-[31px]">
+    {{AboutDB.section.discover.descr}}
+    </p>
+    <ul
+    class="mt-[30px] list-inside text-[18px] leading-[35px] w-full list"
+    >
+        {{#each AboutDB.section.discover.elem}}
+            <li>{{text}}</li>
+        {{/each}}
+    </ul>
+</div>
+</section>
